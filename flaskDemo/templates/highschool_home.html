@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block content %}
+
+		<article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+			<h1><a class="article-title" ><center>Welcome to myHighSchool!</center></a></h1>
+			<h2><a class="article-title" ><center>Exciting Course Offerings:</center></a></h2>
+         </article>
+    
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+			<h2><a class="article-title" >9th Grade Classes</a></h2>
+			{%for course in courses9%}
+              <a class="mr-2" >{{ course['Course_Name'] }}  {{course['Grade_Level']}}</a>		  
+			{%endfor%}
+         </article>
+     
+	 
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+			<h2><a class="article-title">10th Grade Classes</a></h2>
+		{%for course in courses10%}
+			<a class="mr-2" >{{ course['Course_Name'] }}  {{course['Grade_Level']}}</a>		  
+	     {%endfor%}
+         </article>
+	 
+	
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+		   <h2><a class="article-title">11th Grade Classes</a></h2>
+				{%for course in courses11%}    
+			<a class="mr-2" >{{ course['Course_Name'] }}  {{course['Grade_Level']}}</a>		  
+		{%endfor%}        		  
+         </article>
+     
+	 
+	
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+		<h2><a class="article-title">12th Grade Classes</a></h2>
+			{%for course in courses12%}
+              <a class="mr-2" >{{ course['Course_Name'] }}  {{course['Grade_Level']}}</a>		  
+            {%endfor%}  		  
+         </article>
+    
+{% endblock content %}

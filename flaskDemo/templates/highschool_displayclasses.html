@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+            <legend class="border-bottom mb-4">{{ legend }}</legend>			   
+			   
+<table style="width:100%">
+  <tr>	
+ <th>Student Last Name</th>
+    <th>Student First Name</th> 
+    <th>Student Grade Level</th>
+	<th>Class</th>
+	<th>Student Average</th>
+  </tr>  
+    {% for row in classes %}
+	  
+		<tr>
+            <td> {{row.LastName}}</td>
+			<td>{{row.FirstName }}</td>
+			<td>{{ row.Grade_Level }}</td>
+			<td>{{  row.Course_Name  }}</td>
+			<td>{{row.Grade}}</td>
+        </tr>
+     {% endfor %}
+	 </table>
+{% endblock content %}

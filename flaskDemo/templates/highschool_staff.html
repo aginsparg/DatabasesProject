@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+  <article class="media content-section">
+<!--    <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/default.jpg')}}"> -->
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2">Choose a staff member to see more options:</a>
+        <small class="text-muted">{{now.strftime('%A %B, %d %Y %H:%M')}}</small>
+
+
+    {% for staff in staff %}
+        <article class="media content-section">
+          
+          <div class="media-body">
+
+            <h2><a class="article-title" href="{{ url_for('staff_options', SSN=staff.SSN, LastName=staff.LastName, FirstName=staff.FirstName) }}">{{staff.SSN}} {{staff.LastName}} {{staff.FirstName}} {{staff.Person_Type}}</a></h2>
+           </div>
+        </article>
+    {% endfor %}
+
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('new_staff') }}">New Staff Member</a>
+			</div>
+ 
+      </div>
+
+    </div>
+  </article>
+
+{% endblock content %}

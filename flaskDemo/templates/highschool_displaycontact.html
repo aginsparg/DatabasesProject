@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+            <legend class="border-bottom mb-4">{{ legend }}</legend>
+<table style="width:100%">
+  <tr>	
+ <th>Student Last Name</th>
+    <th>Student First Name</th> 
+    <th>Contact Last Name</th>
+	<th>Contact First Name</th>
+	<th>Contact Phone Number</th>
+  </tr>  
+    {% for row in contactstudent %}
+       
+		<tr>
+            <td> {{row.LastName}}</td>
+			<td>{{row.FirstName }}</td>
+			<td>{{ row.Last_Name }}</td>
+			<td>{{  row.First_Name  }}</td>
+			<td>{{row.Phone_Number}}</td>
+        </tr>
+     {% endfor %}
+	 </table>
+	 
+<br><br><br><br>
+
+<table style="width:100%">
+  <tr>	
+ <th>Staff Last  &nbsp; Name</th>
+    <th>Staff First  &nbsp;   Name</th> 
+    <th>Contact Last   &nbsp;  Name</th>
+	<th>Contact First  &nbsp;   Name</th>
+	<th>Contact Phone  &nbsp;   Number</th>
+  </tr>  
+    {% for row in contactstaff %}
+       
+		<tr>
+            <td> {{row.LastName}}</td>
+			<td>{{row.FirstName }}</td>
+			<td>{{ row.Last_Name }}</td>
+			<td>{{  row.First_Name  }}</td>
+			<td>{{row.Phone_Number}}</td>
+        </tr>
+     {% endfor %}
+	 </table>	
+{% endblock content %}

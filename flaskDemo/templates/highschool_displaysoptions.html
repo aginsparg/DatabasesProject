@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+       
+        <small class="text-muted">{{now.strftime('%A %B, %d %Y %H:%M')}}</small>
+
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('display_contacts') }}">View Student/Staff Emergency Contacts</a>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('display_attendance') }}">View Student/Staff Attendance</a>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('view_classes') }}">View Classes</a>
+			<a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('student_GPA') }}">View Student GPA</a>
+          </div>
+ 
+      </div>
+
+    </div>
+  </article>
+
+{% endblock content %}

@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block content %}
+<legend class="border-bottom mb-4">{{ legend }}</legend>
+<table style="width:100%">
+  <tr>	
+ <th>Student Last Name</th>
+    <th>Student First Name</th> 
+    <th>Class</th>
+	<th>Date</th>
+	<th>Attendance</th>
+  </tr>  
+    {% for row in attendancestudent %}
+	  
+		<tr>
+            <td> {{row.LastName}}</td>
+			<td>{{row.FirstName }}</td>
+			<td>{{ row.Course_Name }}</td>
+			<td>{{  row.Date  }}</td>
+			<td>{{row.Attendance_Code}}</td>
+        </tr>
+     {% endfor %}
+	 </table>
+	 
+<br><br><br><br>
+
+<table style="width:100%">
+  <tr>	
+ <th>Staff Last  &nbsp; Name</th>
+    <th>Staff First  &nbsp;   Name</th> 
+    <th>Date</th>
+	<th>Attendance  &nbsp;   Reason</th>
+  </tr>  
+    {% for row in attendancestaff %}
+       
+		<tr>
+            <td> {{row.LastName}}</td>
+			<td>{{row.FirstName }}</td>
+			<td>{{ row.Date }}</td>
+			<td>{{  row.Reason_Code  }}</td>
+		</tr>
+     {% endfor %}
+	 </table>	
+{% endblock content %}
+
+
+
+{% if a %}
+{{ a }}
+{% endif %}
+{% if b %}
+{{ b }}
+{% endif %}
+{% if c %}
+{{ c }}
+{% endif %}

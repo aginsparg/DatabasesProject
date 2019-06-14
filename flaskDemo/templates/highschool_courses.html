@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+  <article class="media content-section">
+<!--    <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/default.jpg')}}"> -->
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2">These are the courses offered at myHighSchool:</a>
+        <small class="text-muted">{{now.strftime('%A %B, %d %Y %H:%M')}}</small>
+
+
+    {% for course in courses %}
+        <article class="media content-section">
+           <div class="media-body">
+
+            <h2><a class="article-title">{{course.CourseID}} {{course.Name}} {{course.Grade_Level}}</a></h2>
+           </div>
+        </article>
+    {% endfor %}
+
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('new_courses') }}">New Course</a>
+			</div>
+ 
+      </div>
+
+    </div>
+  </article>
+
+{% endblock content %}
